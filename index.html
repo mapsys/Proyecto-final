@@ -33,8 +33,8 @@
             </li>
           </ul>
         </nav>
-        <div id= "carrito-contenido" class="carrito-contenido disable">
-          <h3>Tu Compra</h2>
+        <div id="carrito-contenido" class="carrito-contenido disable">
+          <h3>Tu Compra</h3>
           <div class="carrito-contenido-items">
             <label>Items:</label>
             <span id="carrito-contenido-cantidad" class="carrito-contenido-cantidad">2</span>
@@ -48,15 +48,35 @@
       </aside>
       <main>
         <div class="main-header">
-        <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
-        <div class="user-login">
-          
+          <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
+          <button id= "btnUserLogin" class="user-login">
+            <i class="bi bi-person-circle"></i>
+            <span class="user-name" id="user-name"></span>
+          </button>
         </div>
-      </div>
         <div id="contenedor-productos" class="contenedor-productos">
           <!-- Esto se va a rellenar en el JS -->
         </div>
       </main>
+    </div>
+    <div class="modalForm" id="modalForm">
+      <div class="popup">
+        <button class="btnCerrarForm" id="btnCerrarForm">X</button>
+        <h2>Inicia sesion</h2>
+        <form class="formLogin" id="formLogin">
+          <div>
+            <label for="name">Usuario:</label>
+            <input type="text" id="user" name="name" required>
+          </div>
+          <div>
+            <label for="email">Clave</label>
+            <input type="password" id="pass" name="email" required>
+          </div>
+          <div>
+            <button type="submit" id="btnLogin">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
     <script src="./js/main.js"></script>
   </body>

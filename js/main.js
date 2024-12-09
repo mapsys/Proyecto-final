@@ -21,6 +21,14 @@ let productosEnCarrito;
 const cantidadItems = document.getElementById("carrito-contenido-cantidad");
 const totalItems = document.getElementById("carrito-contenido-precio");
 const contenidoCarrito = document.getElementById("carrito-contenido");
+const btnUserLogin = document.getElementById("btnUserLogin");
+const userName = document.getElementById("user-name");
+const modalForm = document.getElementById("modalForm");
+const closeForm = document.getElementById("btnCerrarForm");
+const btnLogin = document.getElementById("btnLogin");
+const loginName = document.getElementById("user");
+const loginpass = document.getElementById("pass");
+let user = {};
 
 // Funcion para cargar productos a la pagina
 function cargarProductos(productos) {
@@ -44,16 +52,23 @@ function cargarProductos(productos) {
 // Agrego un listener a cada boton comprar
 function actualizaBotonesAgregar() {
   botonesAgregar = document.querySelectorAll(".producto-agregar");
-  botonesAgregar.forEach((boton) => {
-    boton.addEventListener("click", agregarAlCarrito);
-  });
+  if (user.name !== undefined) {
+    botonesAgregar.forEach((boton) => {
+      boton.classList.add("habilitado");
+      boton.addEventListener("click", agregarAlCarrito);
+    });
+  } else {
+    botonesAgregar.forEach((boton) => {
+      boton.classList.remove("habilitado");
+      boton.setAttribute("title", "Debes iniciar sesión para poder comprar");
+      boton.removeEventListener("click", agregarAlCarrito);
+    });
+  }
 }
 
 function agregarAlCarrito(e) {
   const botonId = e.currentTarget.id;
-  console.log(botonId);
   const productoAgregado = productos.find((producto) => producto.id == botonId);
-  console.log(productoAgregado);
   if (productosEnCarrito.some((producto) => producto.id === productoAgregado.id)) {
     const index = productosEnCarrito.findIndex((producto) => producto.id === productoAgregado.id);
     productosEnCarrito[index].cantidad++;
@@ -79,6 +94,40 @@ function actualizarDatosCarrito() {
   totalItems.innerText = `$${total}`;
 }
 
+function actualizarLogin() {
+  if (user.name !== undefined) {
+    btnUserLogin.addEventListener("click", logOut);
+    userName.innerText = `Bienvenido ${user.name}\nClick to logout`;
+  } else {
+    modalForm.style.display = "flex";
+  }
+}
+
+function login(e) {
+  e.preventDefault();
+  console.log(loginName.value);
+  modalForm.style.display = "none";
+  user.name = loginName.value;
+  user.password = loginpass.value;
+  localStorage.setItem("user", JSON.stringify(user));
+  actualizarUser();
+}
+function actualizarUser() {
+  if (localStorage.getItem("user")) {
+    user = JSON.parse(localStorage.getItem("user"));
+    userName.innerText = `Bienvenido ${user.name} \nClick to logout`;
+    actualizaBotonesAgregar();
+  } else {
+    userName.innerText = "Iniciar Sesión";
+    actualizaBotonesAgregar();
+  }
+}
+function logOut() {
+  user = {};
+  localStorage.removeItem("user");
+  userName.innerText = "Iniciar Sesión";
+  actualizaBotonesAgregar();
+}
 async function main() {
   await leerProductos();
   cargarProductos(productos);
@@ -98,6 +147,12 @@ async function main() {
       }
     });
   }
+  actualizarUser();
+  btnLogin.addEventListener("click", login);
+  closeForm.addEventListener("click", () => {
+    modalForm.style.display = "none";
+  });
+  btnUserLogin.addEventListener("click", actualizarLogin);
 
   if (localStorage.getItem("productos-en-carrito")) {
     productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito"));
