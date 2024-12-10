@@ -94,13 +94,8 @@ function actualizarDatosCarrito() {
   totalItems.innerText = `$${total}`;
 }
 
-function actualizarLogin() {
-  if (user.name !== undefined) {
-    btnUserLogin.addEventListener("click", logOut);
-    userName.innerText = `Bienvenido ${user.name}\nClick to logout`;
-  } else {
+function habilitaLogin() {
     modalForm.style.display = "flex";
-  }
 }
 
 function login(e) {
@@ -111,15 +106,22 @@ function login(e) {
   user.password = loginpass.value;
   localStorage.setItem("user", JSON.stringify(user));
   actualizarUser();
+  btnUserLogin.addEventListener("click", logOut);
 }
 function actualizarUser() {
+  btnLogin.addEventListener("click", login);
+  closeForm.addEventListener("click", () => {
+    modalForm.style.display = "none";
+  });
   if (localStorage.getItem("user")) {
     user = JSON.parse(localStorage.getItem("user"));
     userName.innerText = `Bienvenido ${user.name} \nClick to logout`;
     actualizaBotonesAgregar();
+    btnUserLogin.addEventListener("click", logOut);
   } else {
     userName.innerText = "Iniciar Sesión";
     actualizaBotonesAgregar();
+    btnUserLogin.addEventListener("click", habilitaLogin);
   }
 }
 function logOut() {
@@ -148,11 +150,7 @@ async function main() {
     });
   }
   actualizarUser();
-  btnLogin.addEventListener("click", login);
-  closeForm.addEventListener("click", () => {
-    modalForm.style.display = "none";
-  });
-  btnUserLogin.addEventListener("click", actualizarLogin);
+  
 
   if (localStorage.getItem("productos-en-carrito")) {
     productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito"));
