@@ -54,14 +54,26 @@ function actualizaBotonesAgregar() {
   botonesAgregar = document.querySelectorAll(".producto-agregar");
   if (user.name !== undefined) {
     botonesAgregar.forEach((boton) => {
-      boton.classList.add("habilitado");
-      boton.addEventListener("click", agregarAlCarrito);
+       // debi agregar esto porque sino se me mexclaban los listeners
+      const nuevoBoton = boton.cloneNode(true);
+      boton.replaceWith(nuevoBoton);
+      nuevoBoton.classList.add("habilitado");
+      nuevoBoton.addEventListener("click", agregarAlCarrito);
     });
   } else {
     botonesAgregar.forEach((boton) => {
-      boton.classList.remove("habilitado");
-      boton.setAttribute("title", "Debes iniciar sesión para poder comprar");
-      boton.removeEventListener("click", agregarAlCarrito);
+      // debi agregar esto porque sino se me mexclaban los listeners
+      const nuevoBoton = boton.cloneNode(true);
+      boton.replaceWith(nuevoBoton);
+      nuevoBoton.classList.remove("habilitado");
+      nuevoBoton.setAttribute("title", "Debes iniciar sesión para poder comprar");
+      nuevoBoton.removeEventListener("click", agregarAlCarrito);
+      nuevoBoton.addEventListener("click", (e) => {
+        Toastify({
+          text: "Debes estar logeado para poder comprar",
+          duration: 3000
+          }).showToast();
+      });
     });
   }
 }
@@ -79,6 +91,10 @@ function agregarAlCarrito(e) {
   actualizarDatosCarrito();
 
   localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+  Toastify({
+    text: ` ${productoAgregado.nombre} agregado al carrito`,
+    duration: 3000
+    }).showToast();
 }
 
 function actualizarDatosCarrito() {
@@ -129,6 +145,7 @@ function logOut() {
   localStorage.removeItem("user");
   userName.innerText = "Iniciar Sesión";
   actualizaBotonesAgregar();
+  actualizarUser();
 }
 async function main() {
   await leerProductos();

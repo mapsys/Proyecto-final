@@ -2,7 +2,7 @@
     "productos": [
       {
         "id": 2,
-        "imagen": "../img/moldes/molde-egg-deco-cakelet-nordic-ware.jpg",
+        "imagen": "./img/moldes/molde-egg-deco-cakelet-nordic-ware.jpg",
         "nombre": "Molde Egg Deco Cakelet Nordic Ware",
         "categoria": {
           "id": 1,
@@ -12,7 +12,7 @@
       },
       {
         "id": 3,
-        "imagen": "../img/moldes/molde-braided-bundt-nordic-wareG.jpg",
+        "imagen": "./img/moldes/molde-braided-bundt-nordic-wareG.jpg",
         "nombre": "Molde Braided Bundt Nordic Ware G",
         "categoria": {
           "id": 1,
@@ -22,7 +22,7 @@
       },
       {
         "id": 4,
-        "imagen": "../img/moldes/molde-anniversary-chico-nordic-ware.jpg",
+        "imagen": "./img/moldes/molde-anniversary-chico-nordic-ware.jpg",
         "nombre": "Molde Anniversary Chico Nordic Ware",
         "categoria": {
           "id": 1,
@@ -32,7 +32,7 @@
       },
       {
         "id": 5,
-        "imagen": "../img/moldes/molde-braided-bundt-nordic-ware.jpg",
+        "imagen": "./img/moldes/molde-braided-bundt-nordic-ware.jpg",
         "nombre": "Molde Braided Bundt Nordic Ware",
         "categoria": {
           "id": 1,
@@ -42,7 +42,7 @@
       },
       {
         "id": 9,
-        "imagen": "../img/moldes/molde-charlotte-cake-nordic-ware.jpg",
+        "imagen": "./img/moldes/molde-charlotte-cake-nordic-ware.jpg",
         "nombre": "Molde Charlotte Cake Nordic Ware",
         "categoria": {
           "id": 1,
@@ -52,7 +52,7 @@
       },
       {
         "id": 12,
-        "imagen": "../img/chocolates/chocolate-cobertura-blanco-90-fenix.jpg",
+        "imagen": "./img/chocolates/chocolate-cobertura-blanco-90-fenix.jpg",
         "nombre": "Chocolate Cobertura Blanco 90 Fenix",
         "categoria": {
           "id": 2,
@@ -62,7 +62,7 @@
       },
       {
         "id": 13,
-        "imagen": "../img/chocolates/chocolate-cobertura-negro-semiamargo-85-fenix.jpg",
+        "imagen": "./img/chocolates/chocolate-cobertura-negro-semiamargo-85-fenix.jpg",
         "nombre": "Chocolate Cobertura Negro Semiamargo 85 Fenix",
         "categoria": {
           "id": 2,
@@ -72,7 +72,7 @@
       },
       {
         "id": 14,
-        "imagen": "../img/chocolates/chocolate-cobertura-dark-belcolade.jpg",
+        "imagen": "./img/chocolates/chocolate-cobertura-dark-belcolade.jpg",
         "nombre": "Chocolate Cobertura Dark Belcolade",
         "categoria": {
           "id": 2,
@@ -82,7 +82,7 @@
       },
       {
         "id": 16,
-        "imagen": "../img/chocolates/chocolate-cobertura-semi-amargo-sin-azucar.jpg",
+        "imagen": "./img/chocolates/chocolate-cobertura-semi-amargo-sin-azucar.jpg",
         "nombre": "Chocolate Cobertura Semi Amargo Sin Azúcar",
         "categoria": {
           "id": 2,
@@ -92,7 +92,7 @@
       },
       {
         "id": 18,
-        "imagen": "../img/chocolates/chocolate-cobertura-con-leche-extraliquido-71-fenix.jpg",
+        "imagen": "./img/chocolates/chocolate-cobertura-con-leche-extraliquido-71-fenix.jpg",
         "nombre": "Chocolate Cobertura Con Leche Extraliquido 71 Fenix",
         "categoria": {
           "id": 2,
@@ -102,7 +102,7 @@
       },
       {
         "id": 19,
-        "imagen": "../img/herramientas/cuchara-redondeada.jpg",
+        "imagen": "./img/herramientas/cuchara-redondeada.jpg",
         "nombre": "Cuchara Redondeada",
         "categoria": {
           "id": 3,
@@ -112,7 +112,7 @@
       },
       {
         "id": 20,
-        "imagen": "../img/herramientas/cuchara-redondeadaG.jpg",
+        "imagen": "./img/herramientas/cuchara-redondeadaG.jpg",
         "nombre": "Cuchara Redondeada G",
         "categoria": {
           "id": 3,
@@ -122,7 +122,7 @@
       },
       {
         "id": 22,
-        "imagen": "../img/herramientas/espatula-cake-server-nordic-ware.jpg",
+        "imagen": "./img/herramientas/espatula-cake-server-nordic-ware.jpg",
         "nombre": "Espátula Cake Server Nordic Ware",
         "categoria": {
           "id": 3,
@@ -132,7 +132,7 @@
       },
       {
         "id": 23,
-        "imagen": "../img/herramientas/espatula-branca-grande.jpg",
+        "imagen": "./img/herramientas/espatula-branca-grande.jpg",
         "nombre": "Espátula Branca Grande",
         "categoria": {
           "id": 3,
@@ -142,7 +142,7 @@
       },
       {
         "id": 28,
-        "imagen": "../img/herramientas/cuchara-de-silicona-dl.jpg",
+        "imagen": "./img/herramientas/cuchara-de-silicona-dl.jpg",
         "nombre": "Cuchara De Silicona DL",
         "categoria": {
           "id": 3,
