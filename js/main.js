@@ -116,13 +116,20 @@ function habilitaLogin() {
 
 function login(e) {
   e.preventDefault();
-  console.log(loginName.value);
   modalForm.style.display = "none";
   user.name = loginName.value;
   user.password = loginpass.value;
   localStorage.setItem("user", JSON.stringify(user));
   actualizarUser();
   btnUserLogin.addEventListener("click", logOut);
+  Toastify({
+    text: "Te has logeado correctamente",
+    gravity: "bottom",
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+    duration: 5000
+    }).showToast();
 }
 function actualizarUser() {
   btnLogin.addEventListener("click", login);
