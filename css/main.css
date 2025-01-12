@@ -144,10 +144,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
- 
 }
 
-.user-login{
+.user-login {
   margin-right: 30px;
   padding: 10px;
   border-radius: 5rem;
@@ -155,18 +154,16 @@ main {
   background-color: white;
   cursor: pointer;
 }
-.user-login:hover{
+.user-login:hover {
   background-color: var(--clr-main);
 }
-.bi-person-circle{
+.bi-person-circle {
   margin-right: 3px;
 }
 .titulo-principal {
   color: var(--clr-main);
   margin-bottom: 2rem;
 }
-
-
 
 .contenedor-productos {
   display: grid;
@@ -177,7 +174,7 @@ main {
 .producto-imagen {
   max-width: 100%;
   border-radius: 1rem;
-  max-height: 320.250px;
+  max-height: 320.25px;
 }
 
 .producto-descripcion {
@@ -206,7 +203,7 @@ main {
   transition: background-color 0.2s, color 0.2s;
 }
 
-.producto-agregar.habilitado{
+.producto-agregar.habilitado {
   background-color: var(--clr-white);
   color: var(--clr-main);
   cursor: pointer;
@@ -288,7 +285,7 @@ main {
   background: #c0392b;
 }
 
-.formLogin{
+.formLogin {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
